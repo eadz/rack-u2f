@@ -23,9 +23,11 @@ And then execute:
 
 ## Usage
 
-Rack U2F has two components; A Rack app to register U2F devices and Rack Middleware to authenticate against registered U2F devices. When registration is enabled, you an add a u2f device through the `u2f_register_path`.
+Rack U2F has two components; A Rack app to register U2F devices and Rack Middleware to authenticate against registered U2F devices. When registration is enabled, you can add a u2f device through the `u2f_register_path`.
 
-For U2F to work, persistence of a counter is required, therefore a storage mechanism is needed. Right now, this gem supports [Redis](https://redis.io), using hashes, but active record support is also planned.
+For U2F to work, persistence of a counter is required, therefore a storage mechanism is needed. Right now, this gem supports [Redis](https://redis.io), but ActiveRecord support is also planned.
+
+## Config
 
 In rails:
 
@@ -41,8 +43,6 @@ config.middleware.use Rack::U2f::AuthenticationMiddleware, {
 }
 ```
 
-Currently only a redis store is developed, but other stores such as active record will be easy to add.
-
 The `Rack::U2f::RegistrationStore::RedisStore.new` by default uses `Redis.new` as the redis connection.
 You can pass in your own connection as the single argument to `RedisStore.new()`, for example:
 
@@ -53,10 +53,7 @@ store: Rack::U2f::RegistrationStore::RedisStore.new(Redis.new(url: 'redis://10.1
 If `enable_registration` is true then you will be able to visit `/_u2f_register` to register a new key.
 Registration should not be enabled in production. It is possible to mount the registration server separately as it is a rack app.
 
-
-In addition, the registration depends on the url used to register, so data from one environment will not work on another.
-
-When authenticated, the session is used to store that fact. *You must be using a secure session store*.
+When authenticated, the session is for further authentication. *You must be using a secure session store*.
 
 ## Development
 

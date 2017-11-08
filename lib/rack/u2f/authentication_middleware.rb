@@ -7,6 +7,7 @@ module Rack
       def initialize(app, config = nil)
         @app = app
         @config = config
+        @after_sign_in_path = config[:after_sign_in_path] || '/'
         @u2f_register_path = config[:u2f_register_path] || '/_u2f_register'
         @store = config[:store] || raise('Please specify a U2F store such as Rack::U2f::RegistrationStore::RedisStore.new')
         @exclude_urls = config[:exclude_urls] || []
@@ -15,7 +16,7 @@ module Rack
       def call(env)
         request = Rack::Request.new(env)
         return @app.call(env) if excluded?(request)
-        return RegistrationServer.new(@config).call(env) if request.path == '/_u2f_register'
+        return RegistrationServer.new(@config).call(env) if request.path == @u2f_register_path
         return @app.call(env) if authenticated?(request)
         return resp_auth_from_u2f(request) if request.params['u2f_auth']
         challenge_page(request)
@@ -56,7 +57,7 @@ module Rack
 
         @store.update_registration(key_handle: u2f_response.key_handle, counter: u2f_response.counter)
         request.session['u2f_authenticated'] = true
-        [302, {"Location" => '/'}, []]
+        [302, { "Location" => @after_sign_in_path }, []]
       end
 
       def challenge_page(request)
@@ -75,7 +76,7 @@ module Rack
           u2fjs: U2FJS
         )
 
-        Rack::Response.new(content)
+        Rack::Response.new(content, 403)
       end
     end
   end
