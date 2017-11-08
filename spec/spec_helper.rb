@@ -2,6 +2,7 @@ require 'bundler/setup'
 require 'rack/u2f'
 require 'rack'
 require 'dummy_server'
+require 'shared_examples_for_registration_store'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

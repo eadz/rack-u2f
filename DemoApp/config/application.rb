@@ -20,7 +20,12 @@ module DemoApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
-    config.middleware.use Rack::U2f::AuthenticationMiddleware, {exclude: [/\Au2f/]}
+
+    config.middleware.use Rack::U2f::AuthenticationMiddleware, {
+      store: Rack::U2f::RegistrationStore::RedisStore.new,
+      exclude_urls: [/\Au2f/, /\A\/\z/]
+    }
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

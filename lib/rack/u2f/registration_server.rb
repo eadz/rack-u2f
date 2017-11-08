@@ -5,6 +5,8 @@ module Rack
   module U2f
     # Middleware allow registration of u2f devices
     class RegistrationServer
+      include Helpers
+
       def initialize(config)
         @config = config
         @store = RegistrationStore::RedisStore.new
@@ -17,7 +19,7 @@ module Rack
         if request.get?
           generate_registration(request)
         else
-          u2f = U2F::U2F.new('https://junk.ngrok.io')
+          u2f = U2F::U2F.new(extract_app_id(request))
 
           response = U2F::RegisterResponse.load_from_json(request.params['response'])
           reg = begin
@@ -27,12 +29,6 @@ module Rack
           ensure
             request.session.delete('challenges')
           end
-          data = {
-            certificate: reg.certificate,
-            key_handle:  reg.key_handle,
-            public_key:  reg.public_key,
-            counter:     reg.counter
-          }
           @store.store_registration(
             certificate: reg.certificate,
             key_handle: reg.key_handle,
@@ -52,20 +48,16 @@ module Rack
         key_handles = @store.key_handles
         sign_requests = u2f.authentication_requests(key_handles)
 
-        app_id = u2f.app_id
-        registration_page(app_id, registration_requests, sign_requests)
-        # [200, {}, ['']]
+        registration_page(u2f.app_id, registration_requests, sign_requests)
       end
 
       def registration_page(app_id, registration_requests, sign_requests)
-        template = ::File.read(::File.join(::File.dirname(__FILE__), 'registration_page.html.mustache'))
-        u2fjs = ::File.read(::File.join(::File.dirname(__FILE__), 'u2f.js'))
         content = Mustache.render(
-          template,
+          REGISTRATION_TEMPLATE,
           app_id: app_id.to_json,
           registration_requests: registration_requests.to_json,
           sign_requests: sign_requests.to_json,
-          u2fjs: u2fjs
+          u2fjs: U2FJS
         )
         Rack::Response.new(content)
       end

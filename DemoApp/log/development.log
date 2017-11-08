@@ -1739,3 +1739,81 @@ Processing by DemoController#index as HTML
 Completed 200 OK in 214ms (Views: 212.2ms)
 
 
+Started GET "/" for 203.158.38.192 at 2017-11-08 22:12:50 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DemoController#index as HTML
+  Rendering demo/index.html.erb within layouts/application
+  Rendered demo/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 212ms (Views: 210.6ms)
+
+
+Started GET "/" for 203.158.38.192 at 2017-11-08 22:13:08 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started POST "/" for 203.158.38.192 at 2017-11-08 22:13:13 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/" for 203.158.38.192 at 2017-11-08 22:13:14 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DemoController#index as HTML
+  Rendering demo/index.html.erb within layouts/application
+  Rendered demo/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 181ms (Views: 179.7ms)
+
+
+Started GET "/" for 203.158.38.192 at 2017-11-08 22:40:54 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/" for 203.158.38.192 at 2017-11-08 22:42:02 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/" for 203.158.38.192 at 2017-11-08 23:03:00 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DemoController#index as HTML
+  Rendering demo/index.html.erb within layouts/application
+  Rendered demo/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 222ms (Views: 220.1ms)
+
+
+Started GET "/demo/index" for 203.158.38.192 at 2017-11-08 23:03:07 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/demo/index" for 203.158.38.192 at 2017-11-08 23:03:09 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/demo/index" for 203.158.38.192 at 2017-11-08 23:03:20 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/demo/index" for 203.158.38.192 at 2017-11-08 23:03:21 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/demo/index" for 203.158.38.192 at 2017-11-08 23:03:27 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/demo/index" for 203.158.38.192 at 2017-11-08 23:03:29 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/demo/index" for 203.158.38.192 at 2017-11-08 23:04:47 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/demo/index" for 203.158.38.192 at 2017-11-08 23:04:48 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started POST "/demo/index" for 203.158.38.192 at 2017-11-08 23:04:55 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/" for 203.158.38.192 at 2017-11-08 23:04:56 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DemoController#index as HTML
+  Rendering demo/index.html.erb within layouts/application
+  Rendered demo/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 197ms (Views: 195.6ms)
+
+
+Started GET "/demo/index" for 203.158.38.192 at 2017-11-08 23:05:01 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DemoController#index as HTML
+  Rendering demo/index.html.erb within layouts/application
+  Rendered demo/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 10ms (Views: 8.4ms)
+
+
+Started GET "/u2f_registration" for 203.158.38.192 at 2017-11-08 23:05:20 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/u2f_registration" for 203.158.38.192 at 2017-11-08 23:05:49 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/" for 203.158.38.192 at 2017-11-08 23:06:05 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DemoController#index as HTML
+  Rendering demo/index.html.erb within layouts/application
+  Rendered demo/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 12ms (Views: 10.6ms)
+
+

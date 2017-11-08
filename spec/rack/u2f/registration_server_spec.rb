@@ -2,8 +2,8 @@ require 'spec_helper'
 
 RSpec.describe Rack::U2f::RegistrationServer do
   let(:config) { {} }
-  let(:stack) { described_class.new(config) }
-  let(:request) { Rack::MockRequest.new(stack) }
+  let(:app) { described_class.new(config) }
+  let(:request) { Rack::MockRequest.new(app) }
 
   context 'have already registered' do
     let(:config) { { 'U2F_REGISTRATION' => '1234' } }
