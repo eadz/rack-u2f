@@ -1,8 +1,6 @@
 # Rack::U2f
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rack/u2f`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Note: This gem needs a tidy up and will be properly released by end of Nov 2017
 
 ## Installation
 
@@ -16,13 +14,34 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install rack-u2f
-
 ## Usage
 
-TODO: Write usage instructions here
+Rack U2F has two components;
+
+A Rack app to register U2F devices
+
+and
+
+Rack middleware to authenticate against registered U2F devices
+
+In rails:
+
+In `config/routes.rb`:
+
+```ruby
+mount Rack::U2f::RegistrationServer.new(store: Rack::U2f::RegistrationStore::RedisStore.new), at: '/u2f_registration'
+```
+
+in `config/application.rb`
+
+```ruby
+config.middleware.use Rack::U2f::AuthenticationMiddleware, {
+  store: Rack::U2f::RegistrationStore::RedisStore.new,
+  exclude_urls: [/\Au2f/, /\A\/\z/]
+}
+```
+
+Currently only a redis store is developed, but other stores such as active record will be easy to add.
 
 ## Development
 
@@ -32,7 +51,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/rack-u2f.
+Bug reports and pull requests are welcome on GitHub at https://github.com/eadz/rack-u2f.
 
 ## License
 

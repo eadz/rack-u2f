@@ -9,12 +9,12 @@ module Rack
 
       def initialize(config)
         @config = config
-        @store = RegistrationStore::RedisStore.new
+        @store = config[:store]
         raise 'Missing RegistrationMiddleware Config' if @config.nil?
       end
 
       def call(env)
-        return [403, {}, ['']] if @config['U2F_REGISTRATION']
+        return [403, {}, ['']] unless ENV['ENABLE_U2F_REGISTRATION']
         request = Rack::Request.new(env)
         if request.get?
           generate_registration(request)

@@ -23,7 +23,8 @@ module DemoApp
 
     config.middleware.use Rack::U2f::AuthenticationMiddleware, {
       store: Rack::U2f::RegistrationStore::RedisStore.new,
-      exclude_urls: [/\Au2f/, /\A\/\z/]
+      exclude_urls: [/\Au2f/, /\A\/\z/],
+      enable_registration: ENV['ENABLE_U2F_REGISTRATION']
     }
 
     # Settings in config/environments/* take precedence over those specified here.
