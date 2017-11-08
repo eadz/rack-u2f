@@ -6,13 +6,16 @@ module Rack
 
       def initialize(app, config = nil)
         @app = app
+        @config = config
+        @u2f_register_path = config[:u2f_register_path] || '/_u2f_register'
         @store = config[:store] || raise('Please specify a U2F store such as Rack::U2f::RegistrationStore::RedisStore.new')
-        @exclude_urls = config[:exclude_urls] || [/\A\/u2f/]
+        @exclude_urls = config[:exclude_urls] || []
       end
 
       def call(env)
         request = Rack::Request.new(env)
         return @app.call(env) if excluded?(request)
+        return RegistrationServer.new(@config).call(env) if request.path == '/_u2f_register'
         return @app.call(env) if authenticated?(request)
         return resp_auth_from_u2f(request) if request.params['u2f_auth']
         challenge_page(request)

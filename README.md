@@ -28,22 +28,27 @@ Rack middleware to authenticate against registered U2F devices
 
 In rails:
 
-In `config/routes.rb`:
-
-```ruby
-mount Rack::U2f::RegistrationServer.new(store: Rack::U2f::RegistrationStore::RedisStore.new), at: '/u2f_registration'
-```
-
 in `config/application.rb`
 
 ```ruby
 config.middleware.use Rack::U2f::AuthenticationMiddleware, {
   store: Rack::U2f::RegistrationStore::RedisStore.new,
-  exclude_urls: [/\Au2f/, /\A\/\z/]
+  exclude_urls: [/\Au2f/, /\A\/\z/],
+  enable_registration: ENV['ENABLE_U2F_REGISTRATION'] == "true",
+  after_sign_in_url: '/', # optional, defaults to '/'
+  u2f_register_path: '/_u2f_register' #optional, defaults to '/_u2f_register'
 }
 ```
 
 Currently only a redis store is developed, but other stores such as active record will be easy to add.
+
+if `enable_registration` is set to `"true"` then you will be able to visit `/_u2f_register` to register a new key.
+
+Note: U2F only works on *https* connections.
+
+In addition, the registration depends on the url used to register, so data from one environment will not work on another.
+
+When authenticated, the session is used to store that fact. *You must be using a secure session store*.
 
 ## Development
 

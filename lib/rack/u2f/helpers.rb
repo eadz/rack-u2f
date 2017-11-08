@@ -7,7 +7,6 @@ module Rack
         return app_id if [443, 80].include?(request.port)
         app_id + ':' + request.port
       end
-
     end
   end
 end

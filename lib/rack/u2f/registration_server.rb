@@ -14,7 +14,7 @@ module Rack
       end
 
       def call(env)
-        return [403, {}, ['']] unless ENV['ENABLE_U2F_REGISTRATION']
+        return [403, {}, ['Registration Disabled']] unless @config[:enable_registration]
         request = Rack::Request.new(env)
         if request.get?
           generate_registration(request)

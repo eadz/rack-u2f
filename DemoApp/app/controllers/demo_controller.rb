@@ -4,4 +4,9 @@ class DemoController < ApplicationController
 
   def protect
   end
+
+  def log_out
+    reset_session
+    redirect_to '/'
+  end
 end

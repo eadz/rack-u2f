@@ -1817,3 +1817,413 @@ Processing by DemoController#index as HTML
 Completed 200 OK in 12ms (Views: 10.6ms)
 
 
+Started GET "/" for 203.158.38.192 at 2017-11-08 23:48:18 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::UnknownHttpMethod (, accepted HTTP methods are OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT, PROPFIND, PROPPATCH, MKCOL, COPY, MOVE, LOCK, UNLOCK, VERSION-CONTROL, REPORT, CHECKOUT, CHECKIN, UNCHECKOUT, MKWORKSPACE, UPDATE, LABEL, MERGE, BASELINE-CONTROL, MKACTIVITY, ORDERPATCH, ACL, SEARCH, MKCALENDAR, and PATCH):
+  
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:406:in `check_method'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:132:in `request_method'
+rack (2.0.3) lib/rack/request.rb:163:in `head?'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:115:in `find_routes'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+/Users/eadz/rack-u2f/lib/rack/u2f/authentication_middleware.rb:16:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 203.158.38.192 at 2017-11-08 23:48:23 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::UnknownHttpMethod (, accepted HTTP methods are OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT, PROPFIND, PROPPATCH, MKCOL, COPY, MOVE, LOCK, UNLOCK, VERSION-CONTROL, REPORT, CHECKOUT, CHECKIN, UNCHECKOUT, MKWORKSPACE, UPDATE, LABEL, MERGE, BASELINE-CONTROL, MKACTIVITY, ORDERPATCH, ACL, SEARCH, MKCALENDAR, and PATCH):
+  
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:406:in `check_method'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:132:in `request_method'
+rack (2.0.3) lib/rack/request.rb:163:in `head?'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:115:in `find_routes'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+/Users/eadz/rack-u2f/lib/rack/u2f/authentication_middleware.rb:16:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 203.158.38.192 at 2017-11-08 23:52:19 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DemoController#index as HTML
+  Rendering demo/index.html.erb within layouts/application
+  Rendered demo/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 238ms (Views: 236.3ms)
+
+
+Started GET "/_u2f_register" for 203.158.38.192 at 2017-11-08 23:52:30 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/_u2f_register" for 203.158.38.192 at 2017-11-08 23:53:10 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/_u2f_register" for 203.158.38.192 at 2017-11-08 23:53:33 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+Redis::CannotConnectError (Error connecting to Redis on 127.0.0.1:6379 (Errno::ECONNREFUSED)):
+  
+redis (3.3.1) lib/redis/client.rb:345:in `rescue in establish_connection'
+redis (3.3.1) lib/redis/client.rb:331:in `establish_connection'
+redis (3.3.1) lib/redis/client.rb:101:in `block in connect'
+redis (3.3.1) lib/redis/client.rb:293:in `with_reconnect'
+redis (3.3.1) lib/redis/client.rb:100:in `connect'
+redis (3.3.1) lib/redis/client.rb:364:in `ensure_connected'
+redis (3.3.1) lib/redis/client.rb:221:in `block in process'
+redis (3.3.1) lib/redis/client.rb:306:in `logging'
+redis (3.3.1) lib/redis/client.rb:220:in `process'
+redis (3.3.1) lib/redis/client.rb:120:in `call'
+redis (3.3.1) lib/redis.rb:2098:in `block in hkeys'
+redis (3.3.1) lib/redis.rb:58:in `block in synchronize'
+/usr/local/Cellar/ruby/2.4.2/lib/ruby/2.4.0/monitor.rb:214:in `mon_synchronize'
+redis (3.3.1) lib/redis.rb:58:in `synchronize'
+redis (3.3.1) lib/redis.rb:2097:in `hkeys'
+/Users/eadz/rack-u2f/lib/rack/u2f/registration_store/redis_store.rb:45:in `key_handles'
+/Users/eadz/rack-u2f/lib/rack/u2f/registration_server.rb:48:in `generate_registration'
+/Users/eadz/rack-u2f/lib/rack/u2f/registration_server.rb:20:in `call'
+/Users/eadz/rack-u2f/lib/rack/u2f/authentication_middleware.rb:17:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/_u2f_register" for 203.158.38.192 at 2017-11-08 23:53:47 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started POST "/_u2f_register" for 203.158.38.192 at 2017-11-08 23:53:51 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/" for 203.158.38.192 at 2017-11-08 23:58:32 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DemoController#index as HTML
+  Rendering demo/index.html.erb within layouts/application
+  Rendered demo/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 209ms (Views: 207.8ms)
+
+
+Started GET "/demo/index" for 203.158.38.192 at 2017-11-08 23:59:05 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DemoController#index as HTML
+  Rendering demo/index.html.erb within layouts/application
+  Rendered demo/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 9ms (Views: 7.5ms)
+
+
+Started GET "/demo/protect" for 203.158.38.192 at 2017-11-08 23:59:14 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DemoController#protect as HTML
+  Rendering demo/protect.html.erb within layouts/application
+  Rendered demo/protect.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 10ms (Views: 7.7ms)
+
+
+Started GET "/_u2f_register" for 203.158.38.192 at 2017-11-08 23:59:43 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/" for 203.158.38.192 at 2017-11-08 23:59:45 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DemoController#index as HTML
+  Rendering demo/index.html.erb within layouts/application
+  Rendered demo/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 225ms (Views: 223.1ms)
+
+
+Started GET "/" for 203.158.38.192 at 2017-11-08 23:59:48 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DemoController#index as HTML
+  Rendering demo/index.html.erb within layouts/application
+  Rendered demo/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 9ms (Views: 7.4ms)
+
+
+Started GET "/" for 203.158.38.192 at 2017-11-09 00:00:02 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DemoController#index as HTML
+  Rendering demo/index.html.erb within layouts/application
+  Rendered demo/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 209ms (Views: 208.1ms)
+
+
+Started GET "/demo/index" for 203.158.38.192 at 2017-11-09 00:00:06 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started POST "/demo/index" for 203.158.38.192 at 2017-11-09 00:00:13 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/" for 203.158.38.192 at 2017-11-09 00:00:14 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DemoController#index as HTML
+  Rendering demo/index.html.erb within layouts/application
+  Rendered demo/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 9ms (Views: 7.2ms)
+
+
+Started GET "/" for 203.158.38.192 at 2017-11-09 00:02:06 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DemoController#index as HTML
+  Rendering demo/index.html.erb within layouts/application
+  Rendered demo/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 8ms (Views: 6.7ms)
+
+
+Started GET "/demo/protect" for 203.158.38.192 at 2017-11-09 00:02:08 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DemoController#protect as HTML
+  Rendering demo/protect.html.erb within layouts/application
+  Rendered demo/protect.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 9ms (Views: 8.0ms)
+
+
+Started GET "/" for 203.158.38.192 at 2017-11-09 00:02:10 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DemoController#index as HTML
+  Rendering demo/index.html.erb within layouts/application
+  Rendered demo/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 9ms (Views: 7.3ms)
+
+
+Started GET "/demo/log_out" for 203.158.38.192 at 2017-11-09 00:02:12 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DemoController#log_out as HTML
+Redirected to https://junk.ngrok.io/
+Completed 302 Found in 0ms
+
+
+Started GET "/" for 203.158.38.192 at 2017-11-09 00:02:13 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DemoController#index as HTML
+  Rendering demo/index.html.erb within layouts/application
+  Rendered demo/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 9ms (Views: 7.3ms)
+
+
+Started GET "/demo/protect" for 203.158.38.192 at 2017-11-09 00:02:15 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started POST "/demo/protect" for 203.158.38.192 at 2017-11-09 00:02:18 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/" for 203.158.38.192 at 2017-11-09 00:02:19 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DemoController#index as HTML
+  Rendering demo/index.html.erb within layouts/application
+  Rendered demo/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 9ms (Views: 7.2ms)
+
+
+Started GET "/demo/protect" for 203.158.38.192 at 2017-11-09 00:02:20 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DemoController#protect as HTML
+  Rendering demo/protect.html.erb within layouts/application
+  Rendered demo/protect.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 9ms (Views: 7.3ms)
+
+
+Started GET "/" for 203.158.38.192 at 2017-11-09 00:02:23 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DemoController#index as HTML
+  Rendering demo/index.html.erb within layouts/application
+  Rendered demo/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 9ms (Views: 7.8ms)
+
+
+Started GET "/demo/log_out" for 203.158.38.192 at 2017-11-09 00:02:25 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DemoController#log_out as HTML
+Redirected to https://junk.ngrok.io/
+Completed 302 Found in 0ms
+
+
+Started GET "/" for 203.158.38.192 at 2017-11-09 00:02:25 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DemoController#index as HTML
+  Rendering demo/index.html.erb within layouts/application
+  Rendered demo/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 8ms (Views: 7.3ms)
+
+
+Started GET "/demo/protect" for 203.158.38.192 at 2017-11-09 00:02:27 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started POST "/demo/protect" for 203.158.38.192 at 2017-11-09 00:02:35 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/" for 203.158.38.192 at 2017-11-09 00:02:36 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DemoController#index as HTML
+  Rendering demo/index.html.erb within layouts/application
+  Rendered demo/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 20ms (Views: 18.6ms)
+
+
+Started GET "/" for 203.158.38.192 at 2017-11-09 00:03:08 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DemoController#index as HTML
+  Rendering demo/index.html.erb within layouts/application
+  Rendered demo/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 8ms (Views: 7.3ms)
+
+
+Started GET "/_u2f_register" for 203.158.38.192 at 2017-11-09 00:03:10 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/" for 203.158.38.192 at 2017-11-09 00:04:03 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DemoController#index as HTML
+  Rendering demo/index.html.erb within layouts/application
+  Rendered demo/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 8ms (Views: 7.3ms)
+
+
+Started GET "/protected" for 203.158.38.192 at 2017-11-09 00:04:06 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DemoController#protect as HTML
+  Rendering demo/protect.html.erb within layouts/application
+  Rendered demo/protect.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 9ms (Views: 7.6ms)
+
+
+Started GET "/" for 203.158.38.192 at 2017-11-09 00:04:08 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DemoController#index as HTML
+  Rendering demo/index.html.erb within layouts/application
+  Rendered demo/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 10ms (Views: 7.9ms)
+
+
+Started GET "/log_out" for 203.158.38.192 at 2017-11-09 00:04:11 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DemoController#log_out as HTML
+Redirected to https://junk.ngrok.io/
+Completed 302 Found in 0ms
+
+
+Started GET "/" for 203.158.38.192 at 2017-11-09 00:04:12 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DemoController#index as HTML
+  Rendering demo/index.html.erb within layouts/application
+  Rendered demo/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 10ms (Views: 8.0ms)
+
+
+Started GET "/_u2f_register" for 203.158.38.192 at 2017-11-09 00:04:13 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/protected" for 203.158.38.192 at 2017-11-09 00:04:16 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started POST "/protected" for 203.158.38.192 at 2017-11-09 00:04:24 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/" for 203.158.38.192 at 2017-11-09 00:04:25 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DemoController#index as HTML
+  Rendering demo/index.html.erb within layouts/application
+  Rendered demo/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 9ms (Views: 7.7ms)
+
+
+Started GET "/protected" for 203.158.38.192 at 2017-11-09 00:04:28 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DemoController#protect as HTML
+  Rendering demo/protect.html.erb within layouts/application
+  Rendered demo/protect.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 10ms (Views: 8.5ms)
+
+
+Started GET "/" for 203.158.38.192 at 2017-11-09 00:04:30 +1100
+Cannot render console from 203.158.38.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DemoController#index as HTML
+  Rendering demo/index.html.erb within layouts/application
+  Rendered demo/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 9ms (Views: 8.0ms)
+
+
