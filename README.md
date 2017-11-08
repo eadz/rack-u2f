@@ -5,6 +5,9 @@ Rack middleware to require add u2f authentication.
 Note: This gem needs a tidy up and will be properly released by end of Nov 2017
 
 [![Gem Version](https://badge.fury.io/rb/rack-u2f.svg)](https://badge.fury.io/rb/rack-u2f)
+[![Build Status](https://api.travis-ci.org/eadz/rack-u2f.svg?branch=master)](https://travis-ci.org/eadz/rack-u2f)
+
+Note: U2F only works on *https* connections.
 
 ## Installation
 
@@ -40,9 +43,16 @@ config.middleware.use Rack::U2f::AuthenticationMiddleware, {
 
 Currently only a redis store is developed, but other stores such as active record will be easy to add.
 
-if `enable_registration` is true then you will be able to visit `/_u2f_register` to register a new key.
+The `Rack::U2f::RegistrationStore::RedisStore.new` by default uses `Redis.new` as the redis connection.
+You can pass in your own connection as the single argument to `RedisStore.new()`, for example:
 
-Note: U2F only works on *https* connections.
+```ruby
+store: Rack::U2f::RegistrationStore::RedisStore.new(Redis.new(url: 'redis://10.1.1.1/'))
+```
+
+If `enable_registration` is true then you will be able to visit `/_u2f_register` to register a new key.
+Registration should not be enabled in production. It is possible to mount the registration server separately as it is a rack app.
+
 
 In addition, the registration depends on the url used to register, so data from one environment will not work on another.
 
