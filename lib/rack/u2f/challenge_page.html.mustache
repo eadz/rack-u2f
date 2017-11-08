@@ -1,0 +1,56 @@
+<html>
+<head>
+  <title>U2F Challenge</title>
+  <style type="text/css"><!--
+  body {
+    background: #232526;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  body, html {
+    color: #fff;
+    font-family: monospace;
+  }
+  div.main {
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    margin-top: 10%;
+  }
+  --></style>
+</head>
+<body>
+<form method="post">
+  <input type="hidden" name="u2f_auth">
+</form>
+
+<script type="text/javascript">
+
+{{{u2fjs}}}
+
+var appId = {{{app_id}}};
+var challenge = {{{challenge}}};
+var signRequests = {{{sign_requests.as_json}}};
+u2f.sign(appId, challenge, signRequests, function(signResponse) {
+  var form, reg, response;
+
+  if (signResponse.errorCode) {
+    return alert("Authentication error: " + signResponse.errorCode);
+  }
+
+  form = document.forms[0];
+  response = document.querySelector('[name=u2f_auth]');
+
+  response.value = JSON.stringify(signResponse);
+
+  form.submit();
+
+});
+</script>
+
+<div class="main">
+<h1>U2F Auth</h1>
+<p>Insert your token and authenticate.</p>
+</div>
+</body>
+</html>
