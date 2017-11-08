@@ -2,6 +2,8 @@
 
 Note: This gem needs a tidy up and will be properly released by end of Nov 2017
 
+[![Gem Version](https://badge.fury.io/rb/rack-u2f.svg)](https://badge.fury.io/rb/rack-u2f)
+
 ## Installation
 
 Add this line to your application's Gemfile:
