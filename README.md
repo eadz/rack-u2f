@@ -1,5 +1,7 @@
 # Rack::U2f
 
+Rack middleware to require add u2f authentication.
+
 Note: This gem needs a tidy up and will be properly released by end of Nov 2017
 
 [![Gem Version](https://badge.fury.io/rb/rack-u2f.svg)](https://badge.fury.io/rb/rack-u2f)
@@ -18,13 +20,9 @@ And then execute:
 
 ## Usage
 
-Rack U2F has two components;
+Rack U2F has two components; A Rack app to register U2F devices and Rack Middleware to authenticate against registered U2F devices. When registration is enabled, you an add a u2f device through the `u2f_register_path`.
 
-A Rack app to register U2F devices
-
-and
-
-Rack middleware to authenticate against registered U2F devices
+For U2F to work, persistence of a counter is required, therefore a storage mechanism is needed. Right now, this gem supports [Redis](https://redis.io), using hashes, but active record support is also planned.
 
 In rails:
 
@@ -42,7 +40,7 @@ config.middleware.use Rack::U2f::AuthenticationMiddleware, {
 
 Currently only a redis store is developed, but other stores such as active record will be easy to add.
 
-if `enable_registration` is set to `"true"` then you will be able to visit `/_u2f_register` to register a new key.
+if `enable_registration` is true then you will be able to visit `/_u2f_register` to register a new key.
 
 Note: U2F only works on *https* connections.
 
@@ -52,13 +50,15 @@ When authenticated, the session is used to store that fact. *You must be using a
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+There is a demo app in the DemoApp folder. Integration tests will require a fake/software u2f key, and is on the TODO list.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+## See also
+
+The [ruby-u2f](https://github.com/castle/ruby-u2f) gem, which this gem depends on.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/eadz/rack-u2f.
+Bug reports and pull requests are welcome on GitHub at https://github.com/eadz/rack-u2f
 
 ## License
 

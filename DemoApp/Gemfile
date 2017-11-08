@@ -16,7 +16,9 @@ gem 'sass-rails', '~> 5.0'
 gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+# for development:
 gem 'rack-u2f', path: '../'
+# gem 'rack-u2f', '0.1.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'redis'

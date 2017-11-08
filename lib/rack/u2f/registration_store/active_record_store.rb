@@ -1,6 +1,6 @@
 module Rack
   module U2f
-    # Store to keep track of u2f data in active record
+    # Store to keep track of u2f data in active record (WIP)
     module RegistrationStore
       class ActiveRecordStore
         def initialize(ar_model)
