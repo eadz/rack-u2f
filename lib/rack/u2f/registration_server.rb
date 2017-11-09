@@ -10,36 +10,40 @@ module Rack
       def initialize(config)
         @config = config
         @store = config[:store]
+        @registration_enabled = config[:enable_registration]
         raise 'Missing RegistrationMiddleware Config' if @config.nil?
       end
 
       def call(env)
-        return [403, {}, ['Registration Disabled']] unless @config[:enable_registration]
+        return registration_disabled unless @registration_enabled
         request = Rack::Request.new(env)
         if request.get?
           generate_registration(request)
         else
-          u2f = U2F::U2F.new(extract_app_id(request))
-
-          response = U2F::RegisterResponse.load_from_json(request.params['response'])
-          reg = begin
-            u2f.register!(request.session['challenges'], response)
-          rescue U2F::Error => e
-            return [422, {}, ['Unable to register device']]
-          ensure
-            request.session.delete('challenges')
-          end
-          @store.store_registration(
-            certificate: reg.certificate,
-            key_handle: reg.key_handle,
-            public_key: reg.public_key,
-            counter: reg.counter
-          )
-          return [200, {}, ["Registration Successful"]]
+          store_registration(request)
         end
       end
 
       private
+
+      def registration_disabled
+        Rack::Response.new('Registration Disabled', 403)
+      end
+
+      def store_registration(request)
+        u2f = U2F::U2F.new(extract_app_id(request))
+        response = U2F::RegisterResponse.load_from_json(request.params['response'])
+        u2f.register!(request.session['challenges'], response)
+        @store.store_registration(
+          certificate: reg.certificate, key_handle: reg.key_handle,
+          public_key: reg.public_key, counter: reg.counter
+        )
+        Rack::Response.new('Registration Successful')
+      rescue U2F::Error
+        return Rack::Response.new('Unable to register device', 422)
+      ensure
+        request.session.delete('challenges')
+      end
 
       def generate_registration(request)
         u2f = U2F::U2F.new('https://junk.ngrok.io')

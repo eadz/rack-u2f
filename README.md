@@ -25,7 +25,7 @@ And then execute:
 
 Rack U2F has two components; A Rack app to register U2F devices and Rack Middleware to authenticate against registered U2F devices. When registration is enabled, you can add a u2f device through the `u2f_register_path`.
 
-For U2F to work, persistence of a counter is required, therefore a storage mechanism is needed. Right now, this gem supports [Redis](https://redis.io), but ActiveRecord support is also planned.
+For U2F to work, persistence of a counter is required, therefore a storage mechanism is needed. Right now, this gem supports [Redis](https://redis.io), and ActiveRecord. There is a simple API to add more stores as required.
 
 ## Config
 
@@ -43,6 +43,10 @@ config.middleware.use Rack::U2f::AuthenticationMiddleware, {
 }
 ```
 
+## Store Config
+
+### Redis Store
+
 The `Rack::U2f::RegistrationStore::RedisStore.new` by default uses `Redis.new` as the redis connection.
 You can pass in your own connection as the single argument to `RedisStore.new()`, for example:
 
@@ -50,10 +54,34 @@ You can pass in your own connection as the single argument to `RedisStore.new()`
 store: Rack::U2f::RegistrationStore::RedisStore.new(Redis.new(url: 'redis://10.1.1.1/'))
 ```
 
+### ActiveRecord Store
+
+Use `Rack::U2f::RegistrationStore::ActiveRecordStore.new(ArModel)`. The `ArModel` should be an active record model with the following schema;
+
+```
+t.string :key_handle, index: true
+t.text :certificate
+t.text :public_key
+t.integer :counter
+```
+
+## Other Config
+
+### enable_registration
+
 If `enable_registration` is true then you will be able to visit `/_u2f_register` to register a new key.
 Registration should not be enabled in production. It is possible to mount the registration server separately as it is a rack app.
 
 When authenticated, the session is for further authentication. *You must be using a secure session store*.
+
+### after_sign_in_url
+
+The url to be directed to after successful sign in, default: `"/"`
+
+### exclude_urls
+
+An array of regular expressions to match on the path to exclude urls from the u2f requirement.
+Be careful here; generally prefixes is the safest way `%r{\A/myprefix}`. Keep in mind that people can add things to paths that may cause an otherwise excluded url to match.
 
 ## Development
 
@@ -70,3 +98,6 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/eadz/r
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
+## Todo ( contributions welcome )
+Integration tests using a fake token such as the [soft token helper from google]( https://github.com/google/u2f-ref-code/blob/master/u2f-chrome-extension/softtokenhelper.js)
