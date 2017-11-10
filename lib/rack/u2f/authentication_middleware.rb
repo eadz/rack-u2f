@@ -25,7 +25,7 @@ module Rack
       private
 
       def excluded?(request)
-        @exclude_urls.any?{ |exc| request.path =~ exc }
+        @exclude_urls.any? { |exc| request.path =~ exc }
       end
 
       def authenticated?(request)
@@ -33,11 +33,11 @@ module Rack
       end
 
       def resp_unregistered
-        [403, {}, ["Unregistered Device"]]
+        Rack::Response.new('Unregistered Device', 403)
       end
 
       def resp_invalid
-        [403, {}, ["Invalid Auth"]]
+        Rack::Response.new('Invalid Auth', 403)
       end
 
       def resp_auth_from_u2f(request)
@@ -47,9 +47,9 @@ module Rack
         begin
           u2f = U2F::U2F.new(extract_app_id(request))
           u2f.authenticate!(request.session['challenge'], u2f_response,
-                    Base64.decode64(registration['public_key']),
-                    registration['counter'])
-        rescue U2F::Error => e
+                            Base64.decode64(registration['public_key']),
+                            registration['counter'])
+        rescue U2F::Error
           return resp_invalid
         ensure
           request.session.delete('challenge')
@@ -57,12 +57,12 @@ module Rack
 
         @store.update_registration(key_handle: u2f_response.key_handle, counter: u2f_response.counter)
         request.session['u2f_authenticated'] = true
-        [302, { "Location" => @after_sign_in_path }, []]
+        [302, { 'Location' => @after_sign_in_path }, []]
       end
 
       def challenge_page(request)
         key_handles = @store.key_handles
-        return resp_unregistered unless key_handles && key_handles.size > 0
+        return resp_unregistered unless key_handles && !key_handles.empty?
         u2f = U2F::U2F.new(extract_app_id(request))
         sign_requests = u2f.authentication_requests(key_handles)
         challenge = u2f.challenge

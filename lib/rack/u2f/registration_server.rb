@@ -11,7 +11,6 @@ module Rack
         @config = config
         @store = config[:store]
         @registration_enabled = config[:enable_registration]
-        raise 'Missing RegistrationMiddleware Config' if @config.nil?
       end
 
       def call(env)
@@ -46,7 +45,7 @@ module Rack
       end
 
       def generate_registration(request)
-        u2f = U2F::U2F.new('https://junk.ngrok.io')
+        u2f = U2F::U2F.new(extract_app_id(request))
         registration_requests = u2f.registration_requests
         request.session['challenges'] = registration_requests.map(&:challenge)
         key_handles = @store.key_handles
