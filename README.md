@@ -72,7 +72,7 @@ t.integer :counter
 If `enable_registration` is true then you will be able to visit `/_u2f_register` to register a new key.
 Registration should not be enabled in production. It is possible to mount the registration server separately as it is a rack app.
 
-When authenticated, the session is for further authentication. *You must be using a secure session store*.
+When authenticated, the session is used for further authentication. *You must be using a secure session store*.
 
 ### after_sign_in_url
 
@@ -86,6 +86,14 @@ Be careful here; generally prefixes is the safest way `%r{\A/myprefix}`. Keep in
 ## Development
 
 There is a demo app in the DemoApp folder. Integration tests will require a fake/software u2f key, and is on the TODO list.
+
+## Future Plans
+
+Right now this gem is designed for Admin access to certian parts of the site. In the future, a concept of identity will be added so that you can use it for end users. 
+
+An example might be sending a header in a response from a rails controller "X-REQUIRE-U2F: true", which the middleware would pick up. Passing "X-U2F-IDENTITY: #{user_id}" would allow the middleware to handle per-user u2f tokens. 
+
+This would replace the current path matching in the middleware. 
 
 ## See also
 
